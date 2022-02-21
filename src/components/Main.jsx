@@ -3,11 +3,14 @@ import CitySelect from "./CitySelect";
 import WeatherCard from "./WeatherCard";
 
 function Main() {
-  const { city } = useCity();
+  const { city, coordinates } = useCity();
   return (
-    <div>
+    <div style={{ textAlign: "center" }}>
       <CitySelect />
       <h1>{city}</h1>
+
+      <p>Lon: {coordinates.lon}</p>
+      <p>Lat: {coordinates.lat}</p>
       <WeatherCard />
     </div>
   );
