@@ -1,5 +1,6 @@
 import { useCity } from "../context/CityContext";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
+import CitySelect from "./CitySelect";
 
 export default function CurrentDay() {
   const { city, weeklyForecast } = useCity();
@@ -14,7 +15,7 @@ export default function CurrentDay() {
         textAlign: "center",
       }}
     >
-      <h2
+      {/* <h2
         style={{
           display: "block",
           position: "relative",
@@ -33,7 +34,17 @@ export default function CurrentDay() {
           }}
         />
         {city}
-      </h2>
+      </h2> */}
+      <div
+        style={{
+          display: "block",
+          position: "relative",
+          top: "25px",
+        }}
+      >
+        <CitySelect />
+      </div>
+
       <img
         id="mainIcon"
         style={{

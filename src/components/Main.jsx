@@ -5,18 +5,29 @@ import OtherDays from "./OtherDays";
 import Grid from "@mui/material/Grid";
 
 function Main() {
-  const { weeklyForecast } = useCity();
+  const { weeklyForecast, city } = useCity();
   return (
     <Grid
       container
-      spacing={0}
       direction="column"
       alignItems="center"
-      justify="center"
-      style={{ minHeight: "100vh" }}
+      justifyContent="center"
+      style={{ minHeight: "90vh" }}
     >
-      <Grid item xs={12}>
-        <CitySelect />
+      <Grid item xs={12} sx={{ display: { xs: "none", md: "block" } }}>
+        <p
+          style={{
+            fontFamily: "Montserrat",
+            fontSize: "4em",
+            fontWeight: "900",
+            position: "relative",
+            display: "inline",
+            top: "60px",
+            left: "240px",
+          }}
+        >
+          {city}
+        </p>
       </Grid>
       {weeklyForecast.length > 0 && (
         <Grid
@@ -25,11 +36,22 @@ function Main() {
           maxWidth={1000}
           justifyContent="center"
           alignItems="center"
+          verticalAlign="middle"
         >
-          <Grid item xs={12} sm={6}>
+          <Grid item xs={12} md={6}>
             <CurrentDay />
           </Grid>
-          <Grid item xs={12} sm={6}>
+          <Grid
+            item
+            xs={12}
+            md={6}
+            sx={{
+              zIndex: "-1",
+              position: "relative",
+              right: { xs: "0px", md: "20px" },
+              top: { xs: "10px", md: "0px" },
+            }}
+          >
             <OtherDays />
           </Grid>
         </Grid>
