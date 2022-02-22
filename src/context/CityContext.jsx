@@ -9,6 +9,7 @@ export const CityProvider = ({ children }) => {
     lat: "41.0351",
     lon: "28.9833",
   });
+  const [weeklyForecast, setWeeklyForecast] = useState([]);
 
   var options = {
     method: "GET",
@@ -30,6 +31,8 @@ export const CityProvider = ({ children }) => {
     city,
     setCity,
     coordinates,
+    weeklyForecast,
+    setWeeklyForecast,
   };
 
   return <CityContext.Provider value={values}>{children}</CityContext.Provider>;

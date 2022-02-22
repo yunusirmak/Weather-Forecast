@@ -4,7 +4,7 @@ import { useState, useContext, useEffect } from "react";
 import { useCity } from "../context/CityContext";
 
 function WeatherCard() {
-  const { city, coordinates } = useCity();
+  const { city, coordinates, setWeeklyForecast } = useCity();
   const [weather, setWeather] = useState([]);
   const dateOptions = {
     weekday: "long",
@@ -51,6 +51,7 @@ function WeatherCard() {
 
   useEffect(() => {
     console.log(weather);
+    setWeeklyForecast(weather);
   }, [weather]);
 
   return (

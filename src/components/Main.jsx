@@ -1,6 +1,7 @@
 import { useCity } from "../context/CityContext";
 import CitySelect from "./CitySelect";
 import WeatherCard from "./WeatherCard";
+import CurrentDay from "./CurrentDay";
 
 function Main() {
   const { city, coordinates } = useCity();
@@ -12,6 +13,7 @@ function Main() {
       <p>Lon: {coordinates.lon}</p>
       <p>Lat: {coordinates.lat}</p>
       <WeatherCard />
+      <CurrentDay />
     </div>
   );
 }
