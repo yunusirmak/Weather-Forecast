@@ -7,7 +7,15 @@ import MenuItem from "@mui/material/MenuItem";
 function CitySelect() {
   const { city, setCity } = useCity();
 
-  const options = ["Istanbul", "Ankara", "Izmir", "Bursa", "Antalya"];
+  const options = [
+    "Istanbul",
+    "Ankara",
+    "Izmir",
+    "Bursa",
+    "Antalya",
+    "Ardahan",
+    "Oymyakon",
+  ];
 
   function handleChange(e) {
     setCity(e.target.value);

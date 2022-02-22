@@ -1,21 +1,40 @@
 import { useCity } from "../context/CityContext";
 import CitySelect from "./CitySelect";
-import WeatherCard from "./WeatherCard";
 import CurrentDay from "./CurrentDay";
+import OtherDays from "./OtherDays";
+import Grid from "@mui/material/Grid";
 
 function Main() {
-  const { city, coordinates } = useCity();
+  const { weeklyForecast } = useCity();
   return (
-    <div style={{ textAlign: "center" }}>
-      <CitySelect />
-      <h1>{city}</h1>
-
-      <p>Lon: {coordinates.lon}</p>
-      <p>Lat: {coordinates.lat}</p>
-      <WeatherCard />
-      <CurrentDay />
-    </div>
+    <Grid
+      container
+      spacing={0}
+      direction="column"
+      alignItems="center"
+      justify="center"
+      style={{ minHeight: "100vh" }}
+    >
+      <Grid item xs={12}>
+        <CitySelect />
+      </Grid>
+      {weeklyForecast.length > 0 && (
+        <Grid
+          container
+          spacing={0}
+          maxWidth={1000}
+          justifyContent="center"
+          alignItems="center"
+        >
+          <Grid item xs={12} sm={6}>
+            <CurrentDay />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <OtherDays />
+          </Grid>
+        </Grid>
+      )}
+    </Grid>
   );
 }
-
 export default Main;

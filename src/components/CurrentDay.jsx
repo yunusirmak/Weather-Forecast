@@ -1,7 +1,8 @@
 import { useCity } from "../context/CityContext";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
 
 export default function CurrentDay() {
-  const { city, coordinates, weeklyForecast } = useCity();
+  const { city, weeklyForecast } = useCity();
   return (
     <div
       className="currentDay"
@@ -13,23 +14,35 @@ export default function CurrentDay() {
         textAlign: "center",
       }}
     >
-      <h1
+      <h2
         style={{
           display: "block",
           position: "relative",
           top: "50px",
           marginBottom: "50px",
+          fontWeight: "300",
         }}
       >
+        <LocationOnIcon
+          sx={{
+            verticalAlign: "middle",
+            display: "inline-flex",
+            fontSize: "large",
+            marginBottom: "2px",
+            marginRight: "2px",
+          }}
+        />
         {city}
-      </h1>
+      </h2>
       <img
+        id="mainIcon"
         style={{
           height: "300px",
           position: "relative",
           marginBottom: "20px",
         }}
-        src={require("../svg/10d.svg").default}
+        src={`/svg/${weeklyForecast[0].icon}`}
+        alt={weeklyForecast[0].description}
       ></img>
       <h1
         style={{
@@ -41,13 +54,14 @@ export default function CurrentDay() {
           left: "5px",
         }}
       >
-        14
+        {Math.floor(weeklyForecast[0].temp)}
         <small
           style={{
             fontWeight: "normal",
             fontSize: "30px",
             position: "relative",
             bottom: "70px",
+            color: "#73caf9",
           }}
         >
           °
@@ -62,18 +76,19 @@ export default function CurrentDay() {
           bottom: "250px",
         }}
       >
-        Rain
+        {weeklyForecast[0].weather}
       </h1>
       <p
         style={{
           fontWeight: "normal",
-          fontSize: "1em",
+          fontSize: "0.8em",
           display: "block",
           position: "relative",
-          bottom: "250px",
+          bottom: "260px",
+          color: "#73caf9",
         }}
       >
-        Tuesday, 22 Feb
+        {weeklyForecast[0].date}
       </p>
     </div>
   );
