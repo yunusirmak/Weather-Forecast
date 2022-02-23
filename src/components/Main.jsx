@@ -3,9 +3,11 @@ import CitySelect from "./CitySelect";
 import CurrentDay from "./CurrentDay";
 import OtherDays from "./OtherDays";
 import Grid from "@mui/material/Grid";
+import { hover } from "@testing-library/user-event/dist/hover";
 
 function Main() {
   const { weeklyForecast, city } = useCity();
+  const currentYear = new Date().getFullYear();
   return (
     <Grid
       container
@@ -56,6 +58,60 @@ function Main() {
           </Grid>
         </Grid>
       )}
+      <Grid item xs={12} sx={{ display: { xs: "none", md: "block" } }}>
+        <p
+          style={{
+            fontFamily: "Montserrat",
+            fontSize: "0.8em",
+            fontWeight: "500",
+            position: "relative",
+            display: "inline",
+            bottom: "60px",
+            left: "240px",
+          }}
+        >
+          Made in Istanbul with ❤️
+        </p>
+      </Grid>
+      <Grid item xs={12} sx={{ display: { xs: "none", md: "block" } }}>
+        <p
+          style={{
+            fontFamily: "Montserrat",
+            fontSize: "0.8em",
+            fontWeight: "500",
+            position: "relative",
+            display: "inline",
+            bottom: "55px",
+            left: "240px",
+          }}
+        >
+          Copyright © {currentYear} by{" "}
+          <a target="_blank" href="https://github.com/yunusirmak">
+            Yunus Irmak
+          </a>
+        </p>
+      </Grid>
+      <Grid
+        item
+        xs={12}
+        sx={{ display: { xs: "block", md: "none" }, marginTop: "25px" }}
+      >
+        <p
+          style={{
+            fontFamily: "Montserrat",
+            fontSize: "0.8em",
+            fontWeight: "500",
+            position: "relative",
+            display: "inline",
+            color: "white",
+          }}
+        >
+          Copyright © {currentYear} by{" "}
+          <a id="footer" target="_blank" href="https://github.com/yunusirmak">
+            Yunus Irmak
+          </a>
+        </p>
+      </Grid>
     </Grid>
   );
 }
