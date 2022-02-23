@@ -52,7 +52,7 @@ export default function CurrentDay() {
           position: "relative",
           marginBottom: "20px",
         }}
-        src={`/svg/${weeklyForecast[0].icon}`}
+        src={require(`../../public/svg/${weeklyForecast[0].icon}`)}
         alt={weeklyForecast[0].description}
       ></img>
       <h1

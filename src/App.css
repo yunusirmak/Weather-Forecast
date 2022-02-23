@@ -8,6 +8,12 @@ html {
     background-color: #121212;
   }
 }
+@media only screen and (min-width: 900px) {
+  #mainIcon {
+    -webkit-filter: drop-shadow(18px 28px 20px rgba(0, 0, 0, 0.25));
+    filter: drop-shadow(18px 28px 20px rgba(0, 0, 0, 0.25));
+  }
+}
 .currentDay {
   text-align: center;
   font-family: "Montserrat", sans-serif;
@@ -23,10 +29,7 @@ html {
   box-shadow: 0px 8px 18px -4px #18cbff;
   margin: auto;
 }
-#mainIcon {
-  -webkit-filter: drop-shadow(18px 28px 20px rgba(0, 0, 0, 0.25));
-  filter: drop-shadow(18px 28px 20px rgba(0, 0, 0, 0.25));
-}
+
 #city-select {
   color: white;
 }

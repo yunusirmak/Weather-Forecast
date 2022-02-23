@@ -68,7 +68,7 @@ export default function OtherDays() {
                       height: "40px",
                       paddingLeft: "50px",
                     }}
-                    src={`/svg/${day.icon}`}
+                    src={require(`../../public/svg/${day.icon}`)}
                     alt={day.description}
                   ></img>
                   <p style={{ marginLeft: "5px", color: "#687b91" }}>
