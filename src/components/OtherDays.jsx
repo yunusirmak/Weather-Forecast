@@ -64,6 +64,7 @@ export default function OtherDays() {
                   }}
                 >
                   <img
+                    id="sideIcon"
                     style={{
                       height: "40px",
                       paddingLeft: "50px",

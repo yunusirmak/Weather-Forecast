@@ -18,7 +18,8 @@ function CitySelect() {
     "Berlin",
     "Madrid",
     "Rome",
-    "Moscow",
+    "Tokyo",
+    "Kyiv",
   ];
 
   function handleChange(e) {

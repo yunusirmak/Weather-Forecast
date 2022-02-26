@@ -13,6 +13,10 @@ html {
     -webkit-filter: drop-shadow(18px 28px 20px rgba(0, 0, 0, 0.25));
     filter: drop-shadow(18px 28px 20px rgba(0, 0, 0, 0.25));
   }
+  #sideIcon {
+    -webkit-filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.46));
+    filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.46));
+  }
 }
 .currentDay {
   text-align: center;
